@@ -9,5 +9,56 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    position: relative;
 }
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.card{
+    background-size: cover;
+    /* background-size: auto 100%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    flex :0.5;
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: flex 0.7s ease-in;
+}
+
+.card.active{
+    flex: 5;
+    transition: flex 0.5s ease-in;
+}
+
+.card.active h3{
+    opacity: 1;
+    transition: opacity 0.7s ease-in 0.5s;
+}
+
+.card h3{
+    
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
+
+@media (max-width: 500px) {
+    .container{ 
+        width: 100vw;
+    }
+
+    .card:nth-of-type(4),.card:nth-of-type(5){
+        display: none;
+    }
+}
+
+
